@@ -1,7 +1,7 @@
 public class Ordenacao {
     private static void merge(Comparable[] a, Comparable[] tempArray, int leftpos, int rightPos, int rightEnd) {
         int leftEnd = rightPos - 1;
-        int tempPos = rightPos;
+        int tempPos = leftpos;
         int numElements = rightEnd - leftpos + 1;
         while (leftpos <= leftEnd && rightPos <= rightEnd) {
             if (a[leftpos].compareTo(a[rightPos]) <= 0)
@@ -39,7 +39,6 @@ public class Ordenacao {
         int j;
         int key;
         int i;
-        float inicial = System.currentTimeMillis();
         for (j = 1; j < vetor.length; j++) {
             key = vetor[j];
             for (i = j - 1; (i >= 0) && (vetor[i] > key); i--) {
@@ -47,10 +46,6 @@ public class Ordenacao {
             }
             vetor[i + 1] = key;
         }
-        float tempoFinal = System.currentTimeMillis();
-        float total = tempoFinal - inicial;
-
-        System.out.println("tempo:" + total);
 
     }
 
